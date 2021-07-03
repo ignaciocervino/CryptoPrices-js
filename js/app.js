@@ -44,7 +44,7 @@ function selectCriptomonedas(criptomonedas){
 
     //Conocer el tiempo de ejecucion
     const inicio = performance.now();
-
+    //This is one way of doing it
     // criptomonedas.forEach(cripto => {
     //     const {FullName,Name} = cripto.CoinInfo;
     //     const option = document.createElement('option');
@@ -54,6 +54,7 @@ function selectCriptomonedas(criptomonedas){
     //     criptomonedasSelect.appendChild(option);
     // });
 
+    //The classic for loop has a better performance than forEach
     //Mejorando performance
     for (let i = 0; i < criptomonedas.length; i++) {
         
@@ -110,7 +111,7 @@ function mostrarAlerta(mensaje){
 
 async function consultarAPI(){
     const {moneda,criptomoneda} = objBusqueda;
-
+    //Url to the API
     const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`;
 
     //Mostrar spinner
